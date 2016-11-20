@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="fill_parent"
+        android:layout_height="46.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/skinpic_green"
+        android:gravity="center"
+        android:padding="12.0dip"
+        android:text="添加事件"
+        android:textColor="@color/white"
+        android:textSize="18.0sp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        android:padding="9.5dip"
+        android:src="@drawable/icon_no" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView1"
+        android:layout_alignParentRight="true"
+        android:background="#00000000"
+        android:padding="9.5dip"
+        android:src="@drawable/icon_yes" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="50.0sp"
+        android:layout_below="@+id/TextView1"
+        android:layout_toLeftOf="@+id/TextView05"
+        android:layout_toRightOf="@+id/textView2"
+        android:background="@drawable/textfield_default_holo_light"
+        android:ems="10"
+        android:hint="事件名"
+        android:textSize="14.0sp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="50.0sp"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_toLeftOf="@+id/TextView05"
+        android:background="@drawable/textfield_default_holo_light"
+        android:ems="10"
+        android:hint="事件内容"
+        android:textSize="14.0sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="50.0sp"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_toLeftOf="@+id/TextView05"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="left|center_vertical"
+        android:text="事件地点"
+        android:textColor="@color/black"
+        android:textSize="14.0sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="50.0sp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_toLeftOf="@+id/TextView05"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="left|center_vertical"
+        android:text="事件时间"
+        android:textColor="@color/black"
+        android:textSize="14.0sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="50.0sp"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_toLeftOf="@+id/TextView05"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="left|center_vertical"
+        android:text="添加图片"
+        android:textColor="@color/black"
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/editText1"
+        android:background="@drawable/textfield_default_holo_light"
+        android:text=" " />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:background="@drawable/textfield_default_holo_light"
+        android:text=" " />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/button1"
+        android:background="@drawable/textfield_default_holo_light"
+        android:text=" " />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/button2"
+        android:background="@drawable/textfield_default_holo_light"
+        android:text=" " />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignTop="@+id/button3"
+        android:layout_toLeftOf="@+id/button3"
+        android:background="@drawable/textfield_default_holo_light"
+        android:text=" " />
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button2"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="right|center_vertical"
+        android:text="  >>  "
+        android:textColor="@color/black"
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/TextView06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView05"
+        android:layout_alignTop="@+id/button2"
+        android:layout_toRightOf="@+id/button2"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="right|center_vertical"
+        android:text="  >>  "
+        android:textColor="@color/black"
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/TextView07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView06"
+        android:layout_below="@+id/editText2"
+        android:layout_toRightOf="@+id/button1"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="right|center_vertical"
+        android:text="  >>  "
+        android:textColor="@color/black"
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/TextView08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText2"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageButton2"
+        android:layout_toRightOf="@+id/editText1"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="right|center_vertical"
+        android:text="    "
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/TextView09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView07"
+        android:layout_alignLeft="@+id/TextView07"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/TextView08"
+        android:background="@drawable/textfield_default_holo_light"
+        android:gravity="right|center_vertical"
+        android:text="    "
+        android:textSize="14.0sp" />
+
+    <LinearLayout
+        android:id="@+id/pic_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignRight="@+id/button3"
+        android:layout_alignTop="@+id/button3"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="20dp"
+            android:layout_height="9dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/button2"
+        android:layout_toLeftOf="@+id/TextView06"
+        android:gravity="right|center_vertical"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/gray"
+        android:textSize="10.0sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/button1"
+        android:layout_alignTop="@+id/button1"
+        android:gravity="right|center_vertical"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/gray"
+        android:textSize="10.0sp" />
+
+</RelativeLayout>

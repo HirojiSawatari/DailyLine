@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loginurl">http://172.21.212.81:6060/ashx/login.ashx</string>
+    <string name="pushmsgurl">http://172.21.212.81:6060/ashx/PushMsgProvider.ashx</string>
+</resources>

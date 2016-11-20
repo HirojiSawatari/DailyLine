@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainTabActivity!</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">DailyLine</string>
+  
+    <string-array name="time">
+        <item>5分钟</item>
+    	<item>10分钟</item>
+    	<item>15分钟</item>
+    	<item>30分钟</item>
+    	<item>1小时</item>
+    	<item>3小时</item>
+  	</string-array>
+	<string-array name="minute">
+	    <item>5</item>
+    	<item>10</item>
+    	<item>15</item>
+    	<item>30</item>
+    	<item>60</item>
+    	<item>180</item>
+  	</string-array>
+  	
+	<string name="refresh_down_text">下拉可刷新</string>
+	<string name="refresh_release_text">松开可刷新</string>
+	<string name="toast_text">刷新完毕</string>
+
+</resources>

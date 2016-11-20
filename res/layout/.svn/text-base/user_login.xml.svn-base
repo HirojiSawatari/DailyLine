@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4644aa"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/timeView"
+        android:layout_width="match_parent"
+        android:layout_height="100.0sp"
+        android:gravity="center"
+        android:text="用户登录"
+        android:textColor="@color/white"
+        android:textSize="22.0sp" />
+    
+    <edu.njnu.dailyline.widget.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="20dp"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_image="@drawable/name_login">
+
+        <EditText
+            android:id="@+id/name_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户名"
+            android:textColor="#333"
+            android:textColorHint="#666"
+            android:textSize="15sp" />
+
+
+    </edu.njnu.dailyline.widget.MaterialTextField>
+
+    <edu.njnu.dailyline.widget.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="20dp"
+        app:mtf_cardCollapsedHeight="4dp"
+        app:mtf_image="@drawable/pass_login">
+
+        <EditText
+            android:id="@+id/pass_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            android:numeric="integer"
+            android:textColor="#333"
+            android:textColorHint="#666"
+            android:textSize="15sp"
+            android:inputType="textPassword" />
+
+
+    </edu.njnu.dailyline.widget.MaterialTextField>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140.0sp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/button_wx"
+            android:layout_width="130.0dip"
+            android:layout_height="50.0dip"
+            android:drawableLeft="@drawable/wx_login"
+            android:text="微信登录" 
+        	android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="130.0dip"
+            android:layout_height="50.0dip"
+            android:text="确定"
+       		android:textColor="@color/white" />
+
+    </LinearLayout>
+    
+</LinearLayout>

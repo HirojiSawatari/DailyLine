@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline
+END
+FragmentPage1.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DailyLine/!svn/ver/6/src/edu/njnu/dailyline/FragmentPage1.java
+END
+FragmentPage2.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DailyLine/!svn/ver/6/src/edu/njnu/dailyline/FragmentPage2.java
+END
+DLApplication.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/DLApplication.java
+END
+FragmentPage3.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/FragmentPage3.java
+END
+FragmentPage4.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/FragmentPage4.java
+END
+FragmentPage5.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/FragmentPage5.java
+END
+BootReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/BootReceiver.java
+END
+AddEventLoc.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/AddEventLoc.java
+END
+AddUserEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/DailyLine/!svn/ver/6/src/edu/njnu/dailyline/AddUserEvent.java
+END
+AddEventTime.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/AddEventTime.java
+END
+SplashScreen.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/DailyLine/!svn/ver/1/src/edu/njnu/dailyline/SplashScreen.java
+END
+StartService.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/DailyLine/!svn/ver/6/src/edu/njnu/dailyline/StartService.java
+END

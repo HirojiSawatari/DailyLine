@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 25
+/svn/DailyLine/!svn/ver/1
+END
+接口文档.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DailyLine/!svn/ver/1/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3.html
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/DailyLine/!svn/ver/1/.classpath
+END
+project.properties
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/DailyLine/!svn/ver/1/project.properties
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/DailyLine/!svn/ver/1/.project
+END
+lint.xml
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/DailyLine/!svn/ver/1/lint.xml
+END
+proguard-project.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/DailyLine/!svn/ver/1/proguard-project.txt
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/DailyLine/!svn/ver/6/AndroidManifest.xml
+END
+ic_launcher-web.png
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/DailyLine/!svn/ver/1/ic_launcher-web.png
+END

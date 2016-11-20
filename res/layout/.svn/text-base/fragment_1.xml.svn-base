@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="fill_parent"
+        android:layout_height="46.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/skinpic_green"
+        android:gravity="center"
+        android:padding="12.0dip"
+        android:text="时间轴"
+        android:textColor="@color/white"
+        android:textSize="18.0sp" />
+    
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        android:padding="9.5dip"
+        android:src="@drawable/icon_add" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="#00000000"
+        android:padding="9.5dip"
+        android:src="@drawable/icon_share" />
+
+    <ImageView
+        android:id="@+id/firstIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/head_cloudy" />
+    
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"  
+        android:layout_below="@+id/firstIcon"
+        android:listSelector="#00000000" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/firstIcon"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageButton1"
+        android:layout_toRightOf="@+id/textView3"
+        android:gravity="left|center_vertical"
+        android:text="南京市"
+        android:textColor="@color/white"
+        android:textSize="33.0sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/firstIcon"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/firstIcon"
+        android:text="    " />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/firstIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/firstIcon"
+        android:text="    " />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/firstIcon"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignTop="@+id/firstIcon"
+        android:layout_toLeftOf="@+id/title2"
+        android:gravity="right|center_vertical"
+        android:text="29~37℃"
+        android:textColor="@color/white"
+        android:textSize="27.0sp"/>
+    
+</RelativeLayout>

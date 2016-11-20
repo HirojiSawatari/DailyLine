@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="libs/locSDK_6.23.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/MobCommons-2016.0707.1708.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/MobTools-2016.0707.1708.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-Core-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-QQ-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-QZone-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-SinaWeibo-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-Wechat-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-Wechat-Core-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-Wechat-Favorite-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-Wechat-Moments-2.7.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gson-2.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/baidumapapi_util_v4_0_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/baidumapapi_base_v4_0_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/baidumapapi_cloud_v4_0_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/baidumapapi_map_v4_0_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/baidumapapi_radar_v4_0_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/baidumapapi_search_v4_0_0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v7-appcompat.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v7-cardview.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v7-gridlayout.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v7-mediarouter.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v7-palette.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v7-preference.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v7-recyclerview.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/nineoldandroids-2.4.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpclient-4.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-codec-1.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/fluent-hc-4.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpclient-cache-4.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpcore-4.2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpmime-4.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

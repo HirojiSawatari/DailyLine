@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46.0dip" >
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:layout_width="fill_parent"
+            android:layout_height="46.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/skinpic_green"
+            android:gravity="center"
+            android:padding="12.0dip"
+            android:text="添加事件"
+            android:textColor="@color/white"
+            android:textSize="18.0sp" />
+
+    	<ImageButton
+        	android:id="@+id/imageButton2"
+       		android:layout_width="wrap_content"
+       	 	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:layout_alignParentTop="true"
+        	android:background="#00000000"
+        	android:padding="9.5dip"
+        	android:src="@drawable/icon_no" />
+
+    	<ImageButton
+        	android:id="@+id/imageButton1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignBottom="@+id/TextView1"
+        	android:layout_alignParentRight="true"
+        	android:background="#00000000"
+        	android:padding="9.5dip"
+        	android:src="@drawable/icon_yes" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/setContent"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:gravity="left|top"
+        android:hint="添加您的那点新鲜事儿..."       
+        android:background="@null" >
+    </EditText>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center_vertical" >
+
+        <ImageButton
+            android:id="@+id/locButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:src="@drawable/set_loc" />
+
+        <TextView
+            android:id="@+id/locText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/locButton"
+            android:gravity="center_vertical" />
+
+        <ImageButton
+            android:id="@+id/timeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:src="@drawable/set_time" />
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/timeButton"
+            android:layout_toLeftOf="@+id/timeButton"
+            android:gravity="right|center_vertical" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+   
+    <GridView 
+        android:id="@+id/noScrollgridview"
+        android:layout_width="290dp"
+        android:layout_height="350dp"
+        android:layout_marginLeft="5dp"
+        android:horizontalSpacing="3dp"        
+        android:numColumns="4"
+        android:scrollbars="none"
+        android:verticalSpacing="5dp" >
+    </GridView>
+   
+ 
+
+
+</LinearLayout>

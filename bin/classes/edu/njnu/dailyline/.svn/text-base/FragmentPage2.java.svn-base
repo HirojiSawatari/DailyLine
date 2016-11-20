@@ -1,0 +1,194 @@
+package edu.njnu.dailyline;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.location.LocationClientOption.LocationMode;
+import com.baidu.mapapi.SDKInitializer;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.MapStatus;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
+import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.PolylineOptions;
+import com.baidu.mapapi.model.LatLng;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.text.format.Time;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+/**
+ * @since 1.0
+ * @version 1.0
+ * @author He Tao of NNU
+ */
+
+public class FragmentPage2 extends Fragment{
+
+	MapView mMapView = null;
+	LocationClient mLocClient;
+    BaiduMap mBaiduMap;
+    public MyLocationListenner myListener = new MyLocationListenner();
+    
+	SQLiteDatabase db;
+	double lat;
+	double lng;
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {	
+		SDKInitializer.initialize(getActivity().getApplicationContext());	//百度地图sdk初始化
+		return inflater.inflate(R.layout.fragment_2, null);		
+	}	
+	
+	public void onActivityCreated(Bundle savedInstanceState) {  
+        super.onActivityCreated(savedInstanceState);
+        //定位
+        mMapView = (MapView) getActivity().findViewById(R.id.bmapView);
+        mBaiduMap = mMapView.getMap();
+        //mBaiduMap.setMaxAndMinZoomLevel(16, 5);	//设置最大最小缩放范围（需考虑）
+        // 开启定位图层
+        mBaiduMap.setMyLocationEnabled(true);
+        // 定位初始化
+        mLocClient = new LocationClient(getActivity());
+        mLocClient.registerLocationListener(myListener);
+        LocationClientOption option = new LocationClientOption();
+		option.setLocationMode(LocationMode.Hight_Accuracy);
+        option.setOpenGps(true); // 打开gps
+        option.setCoorType("bd09ll"); // 设置坐标类型
+        mLocClient.setLocOption(option);
+        mLocClient.start();
+        
+        //画当日轨迹线
+        //构造折线点坐标集
+        List<LatLng> points = new ArrayList<LatLng>();
+        //获取当前日
+      	Time time = new Time("Asia/Hong_Kong");
+      	time.setToNow();
+      	int curDay = time.monthDay;
+      	
+		db = getActivity().openOrCreateDatabase("Line_info.db", Context.MODE_PRIVATE, null);  //打开SQLite数据库
+		//若不存在track表新建该表
+		db.execSQL("CREATE TABLE IF NOT EXISTS track" +  
+                "(_id INTEGER PRIMARY KEY AUTOINCREMENT, lat VARCHAR, lon VARCHAR, " +
+                "year INTEGER, month INTEGER, day INTEGER, hour INTEGER, minute INTEGER, second INTEGER, " +
+                "appname VARCHAR, step INTEGER)"); 
+		Cursor c = db.query("track", null, null, null, null, null, null);  //获得游标
+		
+		double befLat = 0.0;
+		double befLng = 0.0;	//记录前一个记录点的经纬度
+		int endMin;
+		int endHour;	//记录该位置结束点时间信息
+		int startMin;
+		int startHour;	//记录该位置起始点时间信息
+		int curMin;
+		int curHour;	//记录当前遍历点时间信息
+		
+		if(c.moveToLast()){//游标移动至最后一位同时判断游标是否为空
+			while(!c.isBeforeFirst()){	//保证游标指向结点存在		
+				if(c.getInt(c.getColumnIndex("day")) != curDay){	//日期切换，输出
+					break;
+				}
+				lat = c.getDouble(c.getColumnIndex("lat"));
+				lng = c.getDouble(c.getColumnIndex("lon"));
+				curMin = c.getInt(c.getColumnIndex("minute"));
+				curHour = c.getInt(c.getColumnIndex("hour"));
+				//游标前移
+				c.moveToPrevious();
+				if(lng < 73){	//判断是否缺测
+	        		continue;
+	        	}
+				if(befLat == 0.0){	//第一个点，初始化
+					befLat = lat;
+					befLng = lng;
+					endMin = curMin;
+					endHour = curHour;
+				}
+				if((lat != befLat && lng != befLng) || c.isBeforeFirst() == true){	//发现新位置，即位置切换点，或者最后一个结点
+					startMin = curMin;
+					startHour = curHour;	//该时间点记录为上一时间段的起始时间点
+					
+					//标记点
+					BitmapDescriptor bitmap = BitmapDescriptorFactory
+							.fromResource(R.drawable.timeline_green);
+					OverlayOptions aa = new MarkerOptions()
+						.position(new LatLng(lat,lng))
+						.icon(bitmap);
+					mBaiduMap.addOverlay(aa);
+					points.add(new LatLng(lat,lng));
+					
+					endMin = curMin;
+					endHour = curHour;	//该时间点 记录为下一时间段的结束时间点
+				}
+				befLat = lat;
+				befLng = lng;	//最后记录该结点经纬度以便于下一结点比较
+			}
+		}
+		c.close();
+		db.close();
+		//构造对象
+		if(points.size() > 2){
+			OverlayOptions trackPolyline = new PolylineOptions().width(15).color(0xAAFF0000).points(points);
+			mBaiduMap.addOverlay(trackPolyline);
+		}
+	}
+	
+	/**
+     * 定位SDK监听函数
+     */
+    public class MyLocationListenner implements BDLocationListener {
+
+        @Override
+        public void onReceiveLocation(BDLocation location) {
+            // map view 销毁后不在处理新接收的位置
+            if (location == null || mMapView == null) {
+                return;
+            }
+            MyLocationData locData = new MyLocationData.Builder()
+                    .accuracy(location.getRadius())
+                            // 此处设置开发者获取到的方向信息，顺时针0-360
+                    .direction(100).latitude(location.getLatitude())
+                    .longitude(location.getLongitude()).build();
+            mBaiduMap.setMyLocationData(locData);
+            LatLng ll = new LatLng(location.getLatitude(), location.getLongitude());
+            MapStatus.Builder builder = new MapStatus.Builder();
+            builder.target(ll).zoom(16.0f);
+            mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+        }
+
+        public void onReceivePoi(BDLocation poiLocation) {
+        }
+    }
+	
+	@Override
+	public void onDestroy() {  
+        super.onDestroy();  
+        //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理  
+        mMapView.onDestroy();  
+    }  
+    @Override
+	public void onResume() {  
+        super.onResume();  
+        //在activity执行onResume时执行mMapView. onResume ()，实现地图生命周期管理  
+        mMapView.onResume();  
+        }  
+    @Override
+	public void onPause() {  
+        super.onPause();  
+        //在activity执行onPause时执行mMapView. onPause ()，实现地图生命周期管理  
+        mMapView.onPause();  
+    }
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory 
+        android:title="轨迹记录"> 
+        <CheckBoxPreference 
+            android:title="开启/关闭后台定位" 
+            android:key="notif"
+            android:summary="开启或关闭后台定位功能" 
+            android:defaultValue="true" />  
+        <CheckBoxPreference 
+            android:title="开机自动记录" 
+            android:key="auto" 
+            android:summary="设备开机即开始后台记录轨迹" 
+            android:defaultValue="true" />
+        <ListPreference 
+            android:title="记录间隔时间（默认1分钟）" 
+            android:key="space" 
+            android:summary="设置后台轨迹记录过程中两次定位间隔时间"
+            android:entries="@array/time"
+            android:entryValues="@array/minute"
+            android:dialogTitle="选择间隔时间" />    
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="应用程序使用记录"> 
+        <CheckBoxPreference 
+            android:title="开启/关闭后台APP记录" 
+            android:key="app"
+            android:summary="开启或关闭后台应用程式使用记录功能" 
+            android:defaultValue="true" />    
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="服务器同步"> 
+        <CheckBoxPreference 
+            android:title="开启/关闭服务器同步" 
+            android:key="client"
+            android:summary="开启或关闭用户记录与服务器同步功能" 
+            android:defaultValue="true" />    
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="信息推送"> 
+        <CheckBoxPreference 
+            android:title="开启/关闭推荐信息推送" 
+            android:key="client"
+            android:summary="开启或关闭推荐信息推送功能" 
+            android:defaultValue="true" />    
+    </PreferenceCategory>
+    
+</PreferenceScreen>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <!-- 第三个白框begin -->
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="fill_parent"
+        android:layout_height="46.0dip"
+        android:background="@drawable/skinpic_green"
+        android:gravity="center"
+        android:padding="12.0dip"
+        android:text="详细资料"
+        android:textColor="@color/white"
+        android:textSize="18.0sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/info_bottom" />
+    </LinearLayout>
+    <!-- 第三个白框end -->
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="match_parent"
+        android:layout_height="45.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="7.0dip"
+        android:background="@drawable/exit_button"
+        android:text="修改资料"
+        android:textColor="@color/white" />
+
+</LinearLayout>
