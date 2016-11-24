@@ -18,7 +18,7 @@ The theme can be changed through local weather.
 `if(weaCode == 1){	//Sunny`
 `    headText.setBackground(getResources().getDrawable(R.drawable.skinpic_orange));`
 `    listView.setBackgroundDrawable(getResources().getDrawable(R.drawable.list_back_sunny));`
-`    firstIcon.setImageResource(R.drawable.head_sunny);	
+`    firstIcon.setImageResource(R.drawable.head_sunny);`	
 `}`
 `if(weaCode == 3){	//Rainy`
 `    headText.setBackground(getResources().getDrawable(R.drawable.skinpic_gray));`
