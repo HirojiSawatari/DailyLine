@@ -176,9 +176,9 @@ private String getTopApp() {
 private void startStepDetector() {
 	flag = true;
 	stepDetector = new StepDetector(this);
-	sensorManager = (SensorManager) this.getSystemService(SENSOR_SERVICE);//获取传感器管理器的实例
+	sensorManager = (SensorManager) this.getSystemService(SENSOR_SERVICE);
 	Sensor sensor = sensorManager
-			.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);//获得传感器的类型，这里获得的类型是加速度传感器
+			.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 	sensorManager.registerListener(stepDetector, sensor,
 			SensorManager.SENSOR_DELAY_FASTEST);
 }
