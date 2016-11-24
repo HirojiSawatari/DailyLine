@@ -56,3 +56,130 @@ This app can push some useful information about the lifestyle of the user.
 
 <img src='mdimage/image10.png' height='300px'/>
 
+## The method of get the track of user
+### Open the database
+```java
+db = openOrCreateDatabase("Line_info.db", Context.MODE_PRIVATE, null);
+db.execSQL("CREATE TABLE IF NOT EXISTS track" +  
+"(_id INTEGER PRIMARY KEY AUTOINCREMENT, lat VARCHAR, lon VARCHAR, " +
+"year INTEGER, month INTEGER, day INTEGER, hour INTEGER, minute INTEGER, second INTEGER, " +
+"appname VARCHAR, step INTEGER)");
+```
+### Set the time span of nodes
+```java
+private void startTimer() {
+    if (mTimer == null) {
+	    mTimer = new Timer();
+	}
+	//Log.i(TAG, "count: " + String.valueOf(count++));
+	isStop = true;
+	if (mTimerTask == null) {
+	    mTimerTask = new TimerTask() {
+		    @Override
+		    public void run() {
+			    //Log.i(TAG, "count: " + String.valueOf(count++));
+				do {
+					try {
+				    	locationClient.start();
+						if (locationClient != null && locationClient.isStarted()){
+							locationClient.requestLocation();
+						}
+						else{
+							Thread.sleep(1000*60);					
+						}
+					} catch (InterruptedException e) {
+					}
+				} while (isStop);
+			}
+		};
+	}
+	if (mTimer != null && mTimerTask != null){
+		mTimer.schedule(mTimerTask, delay, period);
+	}
+}
+```
+
+### Get the information of nodes
+```java
+private void getLocationInfo(BDLocation location) {
+	if (location != null) {
+		position = new Position();
+			
+		lat = location.getLatitude();
+		lng = location.getLongitude();
+		strLat = String.format("%.3f", lat);
+		strLng = String.format("%.3f", lng);			
+		position.setLat(Double.valueOf(strLat).doubleValue());
+		position.setLon(Double.valueOf(strLng).doubleValue());
+			
+		Time time = new Time("Asia/Hong_Kong");
+		time.setToNow();
+			
+		position.setYear(time.year);
+		position.setMonth((time.month) + 1);
+		position.setDay(time.monthDay);
+		position.setHour(time.hour);
+		position.setMinute(time.minute);
+		position.setSecond(time.second);
+			
+		position.setApppack(getTopApp());
+			
+		total_step = StepDetector.CURRENT_SETP;	
+		position.setStep(total_step);		
+			
+		PostData(position);	
+	} else {
+	}
+}
+```
+(1) Get latitude and longitude (Based on BaiduLoc SDK)
+```java
+public class MyLocationListener implements BDLocationListener {
+	public void onReceiveLocation(BDLocation location) {
+		if (location == null){
+			return;	
+		}
+		locationClient.stop();
+		getLocationInfo(location);
+	}
+	public void onReceivePoi(BDLocation poiLocation) {			
+	}
+}
+```
+(2) Get current date and time
+
+(3) Get the name of the APP which is running
+```java
+private String getTopApp() {
+    String topActivity = "";
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        UsageStatsManager m = (UsageStatsManager) getSystemService(USAGE_STATS_SERVICE);
+        if (m != null) {
+            long now = System.currentTimeMillis();
+            List<UsageStats> stats = m.queryUsageStats(UsageStatsManager.INTERVAL_BEST, now - 60 * 1000, now);
+            if ((stats != null) && (!stats.isEmpty())) {
+                int j = 0;
+                for (int i = 0; i < stats.size(); i++) {
+                    if (stats.get(i).getLastTimeUsed() > stats.get(j).getLastTimeUsed()) {
+                        j = i;
+                    }
+                }
+                topActivity = stats.get(j).getPackageName();
+            }
+        }
+    }
+	return topActivity;    
+}
+```
+(4) Get steps (Determine the trip mode) (Based on StepDetector.java)
+```java
+private void startStepDetector() {
+	flag = true;
+	stepDetector = new StepDetector(this);
+	sensorManager = (SensorManager) this.getSystemService(SENSOR_SERVICE);//获取传感器管理器的实例
+	Sensor sensor = sensorManager
+			.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);//获得传感器的类型，这里获得的类型是加速度传感器
+	sensorManager.registerListener(stepDetector, sensor,
+			SensorManager.SENSOR_DELAY_FASTEST);
+}
+```
